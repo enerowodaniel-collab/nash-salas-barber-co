@@ -49,6 +49,8 @@ export default function App() {
   const today = new Date().toISOString().split("T")[0];
 
   useEffect(() => {
+    if (!supabase) return;
+
     (async () => {
       const { data, error } = await supabase
         .from("reviews")
@@ -82,13 +84,20 @@ export default function App() {
     setError(null);
 
     try {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      if (!supabaseUrl || !supabaseAnonKey) {
+        throw new Error("Booking is temporarily unavailable. Please contact the shop directly.");
+      }
+
       const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-booking-email`,
+        `${supabaseUrl}/functions/v1/send-booking-email`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            Authorization: `Bearer ${supabaseAnonKey}`,
           },
           body: JSON.stringify({
             name: form.name,
