@@ -183,12 +183,12 @@ export default function App() {
             {/* Stats */}
             <div className="flex gap-8 mt-12">
               <div>
-                <p className="text-3xl font-bold text-amber-400">8+</p>
+                <p className="text-3xl font-bold text-amber-400">2+</p>
                 <p className="text-sm text-white/50">Years experience</p>
               </div>
               <div className="w-px bg-white/10" />
               <div>
-                <p className="text-3xl font-bold text-amber-400">2k+</p>
+                <p className="text-3xl font-bold text-amber-400">150+</p>
                 <p className="text-sm text-white/50">Happy clients</p>
               </div>
               <div className="w-px bg-white/10" />
@@ -275,7 +275,7 @@ export default function App() {
             <p className="text-amber-400 text-sm tracking-[3px] uppercase font-medium mb-3">Meet your barber</p>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">Nash Salas</h2>
             <p className="text-white/70 leading-relaxed mb-4">
-              With over 8 years behind the chair, Nash has turned a craft into an art form. He's not just cutting hair — he's building confidence, one client at a time.
+              With over 2 years behind the chair, Nash has turned a craft into an art form. He's not just cutting hair — he's building confidence, one client at a time.
             </p>
             <p className="text-white/70 leading-relaxed mb-8">
               Specializing in skin fades, classic cuts, and beard sculpting, Nash blends old-school technique with modern style. Walk in a stranger, walk out feeling like the best version of yourself.
