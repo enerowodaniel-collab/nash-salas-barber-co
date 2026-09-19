@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Scissors, Calendar, User, Mail, Phone, Clock, MessageSquare, CheckCircle2, Loader2, ArrowRight, Star, MapPin, Sparkles, Quote } from "lucide-react";
 import { SERVICES, TIME_SLOTS } from "@/lib/services";
-import { supabase, supabaseAnonKey, supabaseUrl } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 type Review = {
   id: string;
@@ -82,29 +82,40 @@ export default function App() {
     setError(null);
 
     try {
-      const response = await fetch(
-        `${supabaseUrl}/functions/v1/send-booking-email`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${supabaseAnonKey}`,
-          },
-          body: JSON.stringify({
-            name: form.name,
-            email: form.email,
-            phone: form.phone,
-            service: form.service,
-            appointment_date: form.date,
-            appointment_time: form.time,
-            notes: form.notes,
-          }),
-        }
-      );
+      const appointment = {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        service: form.service,
+        appointment_date: form.date,
+        appointment_time: form.time,
+        notes: form.notes || null,
+      };
+
+      const { error: appointmentError } = await supabase
+        .from("appointments")
+        .insert(appointment);
+
+      if (appointmentError) {
+        throw new Error("Booking could not be saved. Please try again.");
+      }
+
+      const response = await fetch("https://formsubmit.co/ajax/geraldnashsalas5@gmail.com", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...appointment,
+          _subject: `New Booking - ${form.name}`,
+          _captcha: "false",
+          _template: "table",
+        }),
+      });
 
       if (!response.ok) {
-        const data = await response.json().catch(() => null);
-        throw new Error(data?.error || "Booking failed. Please try again.");
+        throw new Error("Booking was saved, but the email could not be sent.");
       }
 
       setSuccess(true);
