@@ -2,7 +2,7 @@ export const SERVICES = [
   {
     id: "classic-cut",
     name: "Classic Cut",
-    price: 20,
+    price: 15,
     duration: "30 min",
     description: "Timeless haircut tailored to your style",
     icon: "scissors",
@@ -10,7 +10,7 @@ export const SERVICES = [
   {
     id: "home-service",
     name: "Home Service",
-    price: 35,
+    price: 30,
     duration: "60 min",
     description: "A fresh cut in the comfort of your home",
     icon: "scissors",
