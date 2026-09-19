@@ -214,13 +214,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Floating badge */}
-        <div className="absolute bottom-8 right-5 hidden lg:block animate-bounce-slow">
-          <div className="bg-amber-400 text-black rounded-full w-28 h-28 flex flex-col items-center justify-center font-bold text-center rotate-12 shadow-2xl">
-            <span className="text-2xl leading-none">$20+</span>
-            <span className="text-[10px] tracking-wide mt-1">starting at</span>
-          </div>
-        </div>
       </section>
 
       {/* Services */}
@@ -541,12 +534,16 @@ export default function App() {
                 />
               </div>
 
-              {/* Submit */}
-              <button
-                type="submit"
-                disabled={submitting}
-                className="w-full bg-amber-400 text-black font-bold text-lg py-4 rounded-xl hover:bg-amber-300 transition-all hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              >
+              <div className="border-t border-white/10 pt-5">
+                <div className="flex items-center justify-between gap-4 mb-3 text-xs text-white/45">
+                  <span>Ready to reserve your chair?</span>
+                  <span className="text-amber-400/80">No payment needed now</span>
+                </div>
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="group w-full bg-amber-400 text-black font-bold text-base py-4 rounded-xl shadow-[0_12px_30px_rgba(251,191,36,0.16)] hover:bg-amber-300 hover:shadow-[0_16px_36px_rgba(251,191,36,0.24)] transition-all disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
                 {submitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" /> Booking...
@@ -556,7 +553,8 @@ export default function App() {
                     Confirm Booking <ArrowRight className="w-5 h-5" />
                   </>
                 )}
-              </button>
+                </button>
+              </div>
 
               <p className="text-center text-xs text-white/40">
                 No payment needed now — pay at the chair.
