@@ -114,6 +114,10 @@ Deno.serve(async (req: Request) => {
       if (!emailResponse.ok) {
         const errText = await emailResponse.text();
         console.error("Email send failed:", errText);
+        return new Response(
+          JSON.stringify({ error: "Booking was saved, but the email notification could not be sent." }),
+          { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
       }
     } else {
       console.log("RESEND_API_KEY not configured. Email not sent. Booking saved to database only.");
