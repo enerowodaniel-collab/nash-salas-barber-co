@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Nash Salas Barber Co.</title>
+  <rect width="64" height="64" rx="16" fill="#0f0d0b"/>
+  <circle cx="22" cy="20" r="8" fill="none" stroke="#fbbf24" stroke-width="5"/>
+  <circle cx="22" cy="44" r="8" fill="none" stroke="#fbbf24" stroke-width="5"/>
+  <path d="M28 25 52 11M28 39 52 53M28 25l24 28M28 39 52 11" fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-width="5"/>
+</svg>
