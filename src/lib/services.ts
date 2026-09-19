@@ -16,22 +16,6 @@ export const SERVICES = [
     icon: "scissors",
   },
   {
-    id: "cut-and-beard",
-    name: "Cut & Beard Combo",
-    price: 55,
-    duration: "55 min",
-    description: "Full package — haircut plus beard sculpt",
-    icon: "scissors",
-  },
-  {
-    id: "hot-towel-shave",
-    name: "Hot Towel Shave",
-    price: 30,
-    duration: "30 min",
-    description: "Traditional straight razor shave with hot towel",
-    icon: "scissors",
-  },
-  {
     id: "kids-cut",
     name: "Kids Cut (under 12)",
     price: 10,
