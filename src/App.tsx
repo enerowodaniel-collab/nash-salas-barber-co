@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Scissors, Calendar, User, Mail, Phone, Clock, MessageSquare, CheckCircle2, Loader2, ArrowRight, Star, MapPin, Sparkles, Quote } from "lucide-react";
 import { SERVICES, TIME_SLOTS } from "@/lib/services";
-import { supabase } from "@/lib/supabase";
+import { supabase, supabaseAnonKey, supabaseUrl } from "@/lib/supabase";
 
 type Review = {
   id: string;
@@ -49,8 +49,6 @@ export default function App() {
   const today = new Date().toISOString().split("T")[0];
 
   useEffect(() => {
-    if (!supabase) return;
-
     (async () => {
       const { data, error } = await supabase
         .from("reviews")
@@ -84,13 +82,6 @@ export default function App() {
     setError(null);
 
     try {
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-      if (!supabaseUrl || !supabaseAnonKey) {
-        throw new Error("Booking is temporarily unavailable. Please contact the shop directly.");
-      }
-
       const response = await fetch(
         `${supabaseUrl}/functions/v1/send-booking-email`,
         {
