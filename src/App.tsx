@@ -162,13 +162,7 @@ export default function App() {
       </nav>
 
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center">
-        <div className="absolute inset-0">
-          <img src={BARBER_IMAGE} alt="Barber at work" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0f0d0b] via-[#0f0d0b]/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0f0d0b] via-transparent to-transparent" />
-        </div>
-
+      <section className="relative min-h-[90vh] flex items-center bg-[#0f0d0b]">
         <div className="relative max-w-6xl mx-auto px-5 py-20 w-full">
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 rounded-full px-4 py-1.5 mb-6">
@@ -297,7 +291,7 @@ export default function App() {
                 <Clock className="w-5 h-5 text-amber-400 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium">Mon–Sat</p>
-                  <p className="text-xs text-white/40">9 AM – 7 PM</p>
+                  <p className="text-xs text-white/40">5 AM – 11 AM</p>
                 </div>
               </div>
             </div>
