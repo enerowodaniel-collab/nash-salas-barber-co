@@ -165,10 +165,6 @@ export default function App() {
       <section className="relative min-h-[90vh] flex items-center bg-[#0f0d0b]">
         <div className="relative max-w-6xl mx-auto px-5 py-20 w-full">
           <div className="max-w-xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 rounded-full px-4 py-1.5 mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span className="text-amber-400 text-xs font-medium tracking-wide">Now accepting new clients</span>
-            </div>
             <h1 className="text-5xl sm:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
               Sharp cuts.<br />
               <span className="text-amber-400 italic font-serif">Bold</span> style.
