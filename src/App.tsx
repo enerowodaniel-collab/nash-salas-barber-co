@@ -164,7 +164,7 @@ export default function App() {
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center bg-[#0f0d0b]">
         <div className="relative max-w-6xl mx-auto px-5 py-20 w-full">
-          <div className="max-w-xl">
+          <div className="max-w-xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 rounded-full px-4 py-1.5 mb-6">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               <span className="text-amber-400 text-xs font-medium tracking-wide">Now accepting new clients</span>
@@ -173,10 +173,10 @@ export default function App() {
               Sharp cuts.<br />
               <span className="text-amber-400 italic font-serif">Bold</span> style.
             </h1>
-            <p className="text-lg text-white/70 mb-8 max-w-md leading-relaxed">
+            <p className="text-lg text-white/70 mb-8 max-w-md mx-auto leading-relaxed">
               Book your next appointment with Nash Salas — where every cut tells a story and every chair feels like home.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
               <a href="#services" className="bg-amber-400 text-black font-semibold px-7 py-3.5 rounded-full hover:bg-amber-300 transition-all hover:scale-105 flex items-center justify-center gap-2">
                 Book Appointment <Calendar className="w-4 h-4" />
               </a>
@@ -186,7 +186,7 @@ export default function App() {
             </div>
 
             {/* Stats */}
-            <div className="flex gap-8 mt-12">
+            <div className="flex justify-center gap-8 mt-12">
               <div>
                 <p className="text-3xl font-bold text-amber-400">2+</p>
                 <p className="text-sm text-white/50">Years experience</p>
